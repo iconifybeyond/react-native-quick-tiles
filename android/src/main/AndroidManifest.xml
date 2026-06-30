@@ -1,0 +1,5 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+  <!-- No permissions or components are declared here.
+       The consuming app must declare the TileService in its own AndroidManifest.xml.
+       See the README for the required manifest snippet. -->
+</manifest>

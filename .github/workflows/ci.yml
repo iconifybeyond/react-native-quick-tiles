@@ -1,0 +1,68 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  js:
+    name: JS/TS — typecheck, lint, build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Typecheck
+        run: yarn typecheck
+
+      - name: Lint
+        run: yarn lint
+
+      - name: Build (builder-bob)
+        run: yarn build
+
+  # Android build job — enabled but allowed to fail while the Gradle setup
+  # is being refined during early alpha. Remove `continue-on-error` once stable.
+  android:
+    name: Android — Gradle build
+    runs-on: ubuntu-latest
+    continue-on-error: true
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: yarn
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: 17
+          distribution: temurin
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Install example dependencies
+        run: yarn install --frozen-lockfile
+        working-directory: example
+
+      - name: Build example app (debug)
+        run: ./gradlew assembleDebug --no-daemon
+        working-directory: example/android
