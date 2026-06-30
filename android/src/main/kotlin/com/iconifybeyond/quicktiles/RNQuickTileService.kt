@@ -138,7 +138,7 @@ open class RNQuickTileService : TileService() {
    *
    * @param componentName Fully-qualified name of the TileService component.
    */
-  internal companion object RefreshHelper {
+  companion object {
     /**
      * Ask the system to rebind the TileService so it re-reads prefs.
      * Uses [TileService.requestListeningState] (API 24+).

@@ -272,6 +272,15 @@ function onTileStartListening(
   return addTileListener('startListening', handler);
 }
 
+/**
+ * Subscribe to the stopListening event (tile is no longer visible in the panel).
+ */
+function onTileStopListening(
+  handler: (payload: Record<string, unknown>) => void,
+): EmitterSubscription {
+  return addTileListener('stopListening', handler);
+}
+
 // ─── Namespace export ─────────────────────────────────────────────────────────
 
 export const QuickTiles = {
@@ -284,6 +293,7 @@ export const QuickTiles = {
   onTileAdded,
   onTileRemoved,
   onTileStartListening,
+  onTileStopListening,
 } as const;
 
 // ─── Named exports ────────────────────────────────────────────────────────────
@@ -298,4 +308,5 @@ export {
   onTileAdded,
   onTileRemoved,
   onTileStartListening,
+  onTileStopListening,
 };

@@ -6,10 +6,15 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: read
+
 jobs:
   js:
     name: JS/TS — typecheck, lint, build
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
       - name: Checkout
@@ -39,6 +44,8 @@ jobs:
     name: Android — Gradle build
     runs-on: ubuntu-latest
     continue-on-error: true
+    permissions:
+      contents: read
 
     steps:
       - name: Checkout

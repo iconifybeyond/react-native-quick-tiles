@@ -1,12 +1,12 @@
 # @iconifybeyond/react-native-quick-tiles
 
-> ⚠️ **Status: Alpha / Work in progress.** APIs may change. Not yet production-ready.
-
 [![npm version](https://img.shields.io/npm/v/@iconifybeyond/react-native-quick-tiles.svg)](https://www.npmjs.com/package/@iconifybeyond/react-native-quick-tiles)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![New Architecture](https://img.shields.io/badge/New%20Architecture-first--class-blue)](https://reactnative.dev/docs/the-new-architecture/landing-page)
 
 **Add and control Android Quick Settings tiles from React Native — built on the New Architecture.**
+
+> ⚠️ **Alpha / Work-in-progress.** This library is in early development. The API is defined and the Kotlin implementation is scaffolded, but **it has not yet been tested end-to-end on a physical device.** Use it for experimentation and contributing — not yet for production apps. Version `0.x` signals semver instability; breaking changes may happen between minor releases.
 
 A React Native library that wraps Android's [Quick Settings Tile API](https://developer.android.com/develop/ui/views/quicksettings-tiles) (`TileService`), letting you:
 
@@ -17,15 +17,6 @@ A React Native library that wraps Android's [Quick Settings Tile API](https://de
 - 📱 **Degrade gracefully** on iOS — all methods reject with a typed `UNSUPPORTED` error instead of crashing
 
 Built as a **Turbo Module** (React Native New Architecture) from the ground up.
-
----
-
-## ⚠️ Alpha / Work-in-progress
-
-This library is in early development. The API is defined and the Kotlin implementation is scaffolded, but **it has not yet been tested end-to-end on a physical device.** Use it for experimentation and contributing — not yet for production apps.
-
-- Version `0.x` signals semver instability; breaking changes may happen between minor releases.
-- Please [open an issue](https://github.com/iconifybeyond/react-native-quick-tiles/issues) if you find bugs or API pain points.
 
 ---
 
