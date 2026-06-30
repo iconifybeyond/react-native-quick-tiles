@@ -1,0 +1,34 @@
+# dependencies
+node_modules/
+.yarn/
+
+# Android
+android/build/
+android/.gradle/
+android/app/build/
+example/android/build/
+example/android/.gradle/
+example/android/app/build/
+
+# iOS
+example/ios/build/
+example/ios/Pods/
+
+# Build output
+lib/
+
+# Misc
+.DS_Store
+*.log
+.expo/
+dist/
+web-build/
+
+# Environment
+.env
+.env.*
+
+# IDE
+.idea/
+.vscode/
+*.iml
